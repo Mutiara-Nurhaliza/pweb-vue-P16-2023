@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <h2 class="text-center">Todo List</h2>
+    <br/>
+    <h2 class="text-center">TO-DO LIST</h2>
+    <br/>
 
     <!-- input -->
     <div class="d-flex">
@@ -81,6 +83,16 @@ export default {
   props: {
     task: String,
   },
+  name: "category",
+  props: {
+    category: String,
+  },
+  
+  name: "task",
+  props: {
+    task: String,
+  },
+
 
   data() {
     return {
