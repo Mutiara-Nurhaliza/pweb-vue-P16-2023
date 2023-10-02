@@ -57,8 +57,11 @@
           </td>
           <td class="text-center">
             <div @click="editTask(index)">
-              <span class="fa fa-pen"></span>
-            </div>
+            <router-link :to="{ name: 'edit', params: { index } }">
+  <span class="fa fa-pen"></span>
+  <div @click="deleteTask(index)"></div>
+</router-link></div>
+
           </td>
           <td class="text-center">
             <div @click="deleteTask(index)">

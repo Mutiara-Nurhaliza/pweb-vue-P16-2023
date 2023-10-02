@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import catchAll from "../views/NotFound.vue";
+import EditTask from "../views/EditTask.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -8,6 +9,12 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
+    },
+    {
+      path: "/edit/:index",
+      name: "edit",
+      component: EditTask,
+      props: true, // Mengaktifkan prop "index" dari parameter rute
     },
     {
       path: "/about",
@@ -20,7 +27,7 @@ const router = createRouter({
     {
       path: "/:catchAll(.*)", // or `:pathMatch(.*)*`
       name: "NotFound",
-      component: () => import("../views/NotFound.vue"),
+      component: catchAll,
     },
   ],
 });
